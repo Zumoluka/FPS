@@ -3291,6 +3291,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6332250181871677315, guid: 30b7946be3462914a880d418fe2ed716, type: 3}
+      propertyPath: jump
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7116884561873440659, guid: 30b7946be3462914a880d418fe2ed716, type: 3}
       propertyPath: m_Name
       value: Jugador

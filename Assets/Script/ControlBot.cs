@@ -47,7 +47,7 @@ public class ControlBot : MonoBehaviour
     public void recibirDaño()
     {
         hp = hp - 25;
-        _animation.SetBool("Attack", true);
+        //_animation.SetBool("Attack", true);
         if (hp <= 0)
         {
             OnDie.Invoke();
@@ -55,13 +55,6 @@ public class ControlBot : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Bullet"))
-        {
-            recibirDaño();
-        }
-    }
    /*void FollowPlayer()
     {
         if (player != null)
@@ -98,10 +91,18 @@ public class ControlBot : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     { 
-        if(gameObject.CompareTag("Jugador"))
+        if(other.gameObject.CompareTag("Jugador"))
         {
-            Atacando.Invoke();
+           
             _animation.SetBool("Attack", true);
+        }
+
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            recibirDaño();
         }
     }
 }
